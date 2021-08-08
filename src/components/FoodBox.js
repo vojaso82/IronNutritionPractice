@@ -15,7 +15,7 @@ class FoodBox extends React.Component{
     <div className="media-content">
       <div className="content">
         <p>
-          <strong> {this.props.food} </strong> <br />
+          <strong> {this.props.name} </strong> <br />
           <small> {this.props.calories} </small>
         </p>
       </div>
