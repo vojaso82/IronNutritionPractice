@@ -6,12 +6,26 @@ import FoodBox from './components/FoodBox';
 
 
 
-function App() {
+class App extends React.Component {
+  state={
+    allFoods: foods,
+  }
+
+  showFoods = () => {
+    return this.state.allFoods.map((eachFood) => {
+      return <FoodBox {...eachFood} />
+    })
+  }
+
+  render() {
+
   return (
+
     <div className="App">
-     <FoodBox/> 
+     {this.showFoods()}
     </div>
   );
+  }
 }
 
 export default App;
