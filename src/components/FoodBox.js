@@ -3,7 +3,7 @@ import foods from '../foods.json';
 
 class FoodBox extends React.Component{
  render(){
-     console.log(this)
+    //  console.log(this)
      return(
 <div className="box">
   <article className="media">

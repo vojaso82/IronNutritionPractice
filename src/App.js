@@ -9,6 +9,7 @@ import FoodBox from './components/FoodBox';
 class App extends React.Component {
   state={
     allFoods: foods,
+    hideForm: false
   }
 
   showFoods = () => {
@@ -16,14 +17,32 @@ class App extends React.Component {
       return <FoodBox {...eachFood} />
     })
   }
+  
+  addNewFood = () => {
+    // console.log("hello") 
+    this.setState({hideForm: !this.state.hideForm})
+  }
 
   render() {
 
   return (
 
     <div className="App">
-     {this.showFoods()}
-    </div>
+      <form hidden= {this.state.hideForm}>
+      <input name="food" placeholder="food" type="text"/>
+      <input name="calories" placeholder="calories" type="number"/>
+      <input name="image" placeholder="image" type="text"/>
+      </form>
+
+      <button onClick={this.addNewFood}> Add New Food </button>
+
+      <ul>
+       {this.showFoods()} 
+      </ul>
+
+
+
+       </div>
   );
   }
 }
