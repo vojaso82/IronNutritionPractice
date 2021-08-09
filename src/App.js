@@ -22,6 +22,26 @@ class App extends React.Component {
     })
   }
   
+  addFoodToList = (food) => {
+    console.log(food)
+    let todaysFood = {...this.state.todaysFood}
+    todaysFood[food.name] = food;
+    this.setState({todaysFood})
+  }
+
+  showTodaysFood = () => {
+    let items = []
+    for(let key in this.state.todaysFood){
+      items.push(
+        <li>Name: {this.state.todaysFood[key.name]} Calories:{this.state.todaysFood} </li>
+      )
+    }
+    return items
+  }
+
+
+
+
   addNewFood = () => {
     // console.log("hello") 
     this.setState({hideForm: !this.state.hideForm})
